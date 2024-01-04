@@ -1,0 +1,11 @@
+.titleText {
+    text-align: center;
+    font-size: 30px;
+    color : rgb(232, 25, 72) !important;
+    font-weight: 600;
+}
+
+.titleBox {
+    background: rgb(255, 255, 255) !important;
+    border-bottom: 1px solid rgb(235, 235, 235) !important;
+}
