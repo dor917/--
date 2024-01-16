@@ -1,5 +1,6 @@
 import { Button } from 'antd';
 import style from "./button.module.css"
+import Link from 'next/link';
 
 
 interface MainButtonProps {
@@ -8,6 +9,8 @@ interface MainButtonProps {
 
 export default function MainButton({ btnText }: MainButtonProps) {
     return (
-        <Button className={style.mainButton}>{btnText}</Button>
+        <Link href="/guest">
+            <Button className={style.mainButton}>{btnText}</Button>
+        </Link>
     )
 }
