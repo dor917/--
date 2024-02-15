@@ -5,11 +5,12 @@ import Link from 'next/link';
 
 interface MainButtonProps {
     btnText: string;
+    hrefUrl: string;
   }
 
-export default function MainButton({ btnText }: MainButtonProps) {
+export default function MainButton({ btnText, hrefUrl }: MainButtonProps) {
     return (
-        <Link href="/guest">
+        <Link href={hrefUrl}>
             <Button className={style.mainButton}>{btnText}</Button>
         </Link>
     )

@@ -7,7 +7,7 @@ export default function Header() {
     return (
         <Row className={style.titleBox}>
             <Col span={24}>
-                <Link href='/'><h1 className={style.titleText}>MarryMe</h1></Link>
+                <Link href='/'><h1 className={style.titleText}>ㅋㅋㅋ</h1></Link>
             </Col>
         </Row>
     )

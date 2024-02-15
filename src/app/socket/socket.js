@@ -1,3 +1,4 @@
+import { message } from "antd";
 import io from "socket.io-client";
 
 export let socket = io("http://localhost:3309", { transports: ["websocket"] });
@@ -15,23 +16,12 @@ export const sendSocketMessage = (message) => {
     socket.emit("message", message);
 };
 
-
-let cbMap = new Map();
-
-// 해당 이벤트를 받고 콜백 함수를 실행함
-export const socketInfoReceived = (cbType, cb) => {
-    cbMap.set(cbType, cb);
-
-    if (socket.hasListeners("message")) {
-        socket.off("message");
-    }
-
-    socket.on("message", ret => {
-        for (let [, cbValue] of cbMap) {
-            cbValue(null, ret);
-        }
-    });
-};
+// // 해당 이벤트를 받고 콜백 함수를 실행함
+// export const socketInfoReceived = () => {
+//     socket.on('message', (msg) => {
+//         console.log(msg);
+//     });
+// };
 
 // 소켓 연결을 끊음
 export const disconnectSocket = () => {
